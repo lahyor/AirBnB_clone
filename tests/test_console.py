@@ -1,6 +1,24 @@
+#!/usr/bin/python3
+"""Defines unittests for console.py.
+
+Unittest classes:
+    TestHBNBCommand_prompting
+    TestHBNBCommand_help
+    TestHBNBCommand_exit
+    TestHBNBCommand_create
+    TestHBNBCommand_show
+    TestHBNBCommand_all
+    TestHBNBCommand_destroy
+    TestHBNBCommand_update
+"""
+import os
+import sys
 import unittest
-from unittest.mock import patch, MagicMock
-from your_module_name import parse, HBNBCommand
+from models import storage
+from models.engine.file_storage import FileStorage
+from console import HBNBCommand
+from io import StringIO
+from unittest.mock import patch
 
 class TestParseFunction(unittest.TestCase):
     def test_parse_with_curly_braces(self):
